@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--=============== FAVICON ===============-->
+  <link rel="shortcut icon" href="assets/img/programming.png" type="image/x-icon" />
+  <!--=============== BOXICONS ===============-->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <!--=============== CSS ===============-->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <title>Personal Portfolio</title>
+  <style>
+    /* Tambahkan CSS untuk notifikasi */
+    .notification {
+      display: none;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px;
+      background-color: #4caf50;
+      color: white;
+      border-radius: 5px;
+      z-index: 1000;
+    }
+
+    .notification.error {
+      background-color: #f44336;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <!-- HEADER PORTFOLIO -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo">Hamzah Alfariansyah</a>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#home" class="nav__link active-link">
+              <i class="bx bx-home-alt nav__icon"></i>
+              <span class="nav__name">Home</span>
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#about" class="nav__link">
+              <i class="bx bx-user nav__icon"></i>
+              <span class="nav__name">About</span>
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#skills" class="nav__link">
+              <i class="bx bx-book-alt nav__icon"></i>
+              <span class="nav__name">Skills</span>
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#certificate" class="nav__link">
+              <i class="bx bx-certification nav__icon"></i>
+              <span class="nav__name">Certificates</span>
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#portfolio" class="nav__link">
+              <i class="bx bx-briefcase-alt nav__icon"></i>
+              <span class="nav__name">Portfolio</span>
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#contact" class="nav__link">
+              <i class="bx bx-message-square-detail nav__icon"></i>
+              <span class="nav__name">Contact</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- <img src="assets/img/icon.png" alt="" class="nav__img" /> -->
+      <!-- theme change light and dark -->
+      <i class="bx bx-moon change-theme" id="theme-button"></i>
+    </nav>
+  </header>
+  <!--=============== MAIN ===============-->
+  <main class="main">
+    <!--=============== HOME ===============-->
+    <section class="home section" id="home">
+      <div class="home__container container grid">
+        <div class="home__data">
+          <span class="home__greeting">Hello, I'm</span>
+          <h1 class="home__name">Hamzah Alfariansyah</h1>
+          <h3 class="home__education">Junior Web Developer</h3>
+
+          <div class="home__buttons">
+            <a href="assets/pdf/HamzahAlfariansyah-resume.pdf" target="_blank" class="button button--ghost">DOWNLOAD CV</a>
+            <a href="#about" class="button">About me</a>
+          </div>
+        </div>
+
+        <div class="home__handle">
+          <img src="assets/img/Hamzah.png" alt="" class="home__img" />
+        </div>
+
+        <div class="home__social">
+          <a href="https://www.linkedin.com/in/Hamzah-Alfariansyah" target="_blank" class="home__social-link"><i
+              class="bx bxl-linkedin"></i></a>
+          <a href="https://github.com/hmzhzhm" target="_blank" class="home__social-link"><i
+              class="bx bxl-github"></i></a>
+          <a href="mailto:alfariansyah22@gmail.com" target="_blank" class="home__social-link"><i
+              class="bx bx-envelope"></i></a>
+        </div>
+
+        <a href="#about" class="home__scroll">
+          <i class="bx bxs-mouse home__scroll-icon"></i>
+          <span class="home__scroll-name">Scroll Down</span>
+        </a>
+      </div>
+    </section>
+
+    <!--=============== ABOUT ===============-->
+    <section class="about section" id="about">
+      <span class="section__subtitle">My Intro</span>
+      <h2 class="section__title">About Me</h2>
+
+      <div class="about__container container grid">
+        <img src="assets/img/profil2.jpg" alt="" class="about__img" />
+        <div class="about__data">
+          <!-- <div class="about__info">
+              <div class="about__box">
+                <i class="bx bx-award"></i>
+                <h3 class="about__title">Graduated</h3>
+                <span class="about__subtitle">Less 1 year experience</span>
+              </div>
+              <div class="about__box">
+                <i class="bx bx-briefcase"></i>
+                <h3 class="about__title">Projects</h3>
+                <span class="about__subtitle">6 Project</span>
+              </div>
+              <div class="about__box">
+                <i class="bx bx-support"></i>
+                <h3 class="about__title">Open to Work</h3>
+                <span class="about__subtitle">Online 24/7</span>
+              </div>
+            </div> -->
+          <p class="about__description">
+            I am Hamzah Alfariansyah, a fresh graduate from Politeknik Negeri Lampung. I have an interest in a career as
+            a Web Developer.
+          </p>
+          <a href="#contact" class="button">Contact Me</a>
+        </div>
+      </div>
+    </section>
+
+    <!--=============== SKILLS ===============-->
+    <!-- <section class="container section section__height" id="skills">
+        <h2 class="section__title">Skills</h2>
+      </section> -->
+    <section class="skills section" id="skills">
+      <span class="section__subtitle">My abilities</span>
+      <h2 class="section__title">SKILLS</h2>
+      <div class="skills__container container grid">
+        <div class="skills__content">
+          <h3 class="skills__title">Programming Language</h3>
+
+          <div class="skills__box">
+            <div class="skills__group">
+              <div class="skills__data">
+                <i class="bx bx-badge-check"></i>
+
+                <div>
+                  <h3 class="skills__name">HTML</h3>
+                  <!-- <span class="skills__level">Basic</span> -->
+                </div>
+              </div>
+              <div class="skills__data">
+                <i class="bx bx-badge-check"></i>
+                <div>
+                  <h3 class="skills__name">CSS</h3>
+                  <!-- <span class="skills__level">Basic</span> -->
+                </div>
+              </div>
+              <div class="skills__data">
+                <i class="bx bx-badge-check"></i>
+
+                <div>
+                  <h3 class="skills__name">Javascript</h3>
+                  <!-- <span class="skills__level">Basic</span> -->
+                </div>
+              </div>
+
+              <div class="skills__data">
+                <i class="bx bx-badge-check"></i>
+
+                <div>
+                  <h3 class="skills__name">PHP</h3>
+                  <!-- <span class="skills__level">Basic</span> -->
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="skills__content">
+          <h3 class="skills__title">Framework / IDE</h3>
+
+          <div class="skills__box">
+            <div class="skills__group">
+              <div class="skills__data">
+                <i class="bx bx-badge-check"></i>
+                <div>
+                  <h3 class="skills__name">VS Code</h3>
+                  <!-- <span class="skills__level">Intermediate</span> -->
+                </div>
+              </div>
+              <div class="skills__data">
+                <i class="bx bx-badge-check"></i>
+                <div>
+                  <h3 class="skills__name">Codeigniter</h3>
+                  <!-- <span class="skills__level">Basic</span> -->
+                </div>
+              </div>
+              <div class="skills__data">
+                <i class="bx bx-badge-check"></i>
+                <div>
+                  <h3 class="skills__name">JQuery</h3>
+                  <!-- <span class="skills__level">Basic</span> -->
+                </div>
+              </div>
+            </div>
+            <div class="skills__group">
+
+              <div class="skills__data">
+                <i class="bx bx-badge-check"></i>
+                <div>
+                  <h3 class="skills__name">MySQL</h3>
+                  <!-- <span class="skills__level">Basic</span> -->
+                </div>
+              </div>
+
+              <div class="skills__data">
+                <i class="bx bx-badge-check"></i>
+                <div>
+                  <h3 class="skills__name">Bootstrap</h3>
+                  <!-- <span class="skills__level">Basic</span> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--=============== CERTIFICATES ===============-->
+    <!-- <section class="container section section__height" id="certificate">
+        <h2 class="section__title">Certificates</h2>
+      </section> -->
+    <section class="work section" id="certificate">
+      <h2 class="section__title">Certificates</h2>
+      <div class="certificate__container bd-grid" style="display: flex; justify-content: center;">
+        <a href="assets/Sertifikasi/sertifikat_bnsp.pdf" class="certificate__img">
+          <img src="assets/Sertifikasi/bnsp.png" alt="" style="width: 250px; height: 350px;" />
+        </a>
+      </div>
+      <br><br>
+      <div class="certificate__container bd-grid">
+        <!-- <a href="assets/Sertifikasi/sertifikat_akreditasi_ti.png" class="certificate__img">
+            <img src="assets/Sertifikasi/sertifikat_akreditasi_ti.png" alt="" />
+          </a> -->
+
+        <!-- <a href="assets/Sertifikasi/sertifikat_course_51_463492_171020113958.page1.png" class="certificate__img">
+            <img src="assets/Sertifikasi/sertifikat_course_51_463492_171020113958.page1.png" alt="" />
+          </a>
+          <a href="assets/Sertifikasi/sertifikat_course_58_463492_171020114055.page1.png" class="certificate__img">
+            <img src="assets/Sertifikasi/sertifikat_course_58_463492_171020114055.page1.png" alt="" />
+          </a> -->
+        <a href="assets/Sertifikasi/sololearn_sql.png" class="certificate__img">
+          <img src="assets/Sertifikasi/sololearn_sql.png" alt="" />
+        </a>
+        <!-- <a href="assets/Sertifikasi/sertifikat_course_237_463492_210221121744_001.png" class="certificate__img">
+            <img src="assets/Sertifikasi/sertifikat_course_237_463492_210221121744_001.png" alt="" />
+          </a> -->
+        <a href="assets/Sertifikasi/sololearn_html.png" class="certificate__img">
+          <img src="assets/Sertifikasi/sololearn_html.png" alt="" />
+        </a>
+        <!-- <a href="assets/Sertifikasi/CLI.png" class="certificate__img">
+            <img src="assets/Sertifikasi/CLI.png" alt="" />
+          </a> -->
+        <a href="assets/Sertifikasi/sololearn_jQuery.png" class="certificate__img">
+          <img src="assets/Sertifikasi/sololearn_jQuery.png" alt="" />
+        </a>
+
+        <a href="assets/Sertifikasi/sertifikat_learningX.jpg" class="certificate__img">
+          <img src="assets/Sertifikasi/sertifikat_learningX.jpg" alt="" />
+        </a>
+        <a href="assets/Sertifikasi/bonet.jpeg" class="certificate__img">
+          <img src="assets/Sertifikasi/bonet.jpeg" alt="" />
+        </a>
+        <a href="assets/Sertifikasi/toeic.jpeg" class="certificate__img">
+          <img src="assets/Sertifikasi/toeic.jpeg" alt="" />
+        </a>
+
+        <!-- <a href="assets/Sertifikasi/bitdegree-certificate-82637810_001.png" class="certificate__img">
+            <img src="assets/Sertifikasi/bitdegree-certificate-82637810_001.png" alt="" />
+          </a> -->
+        <!-- <a href="assets/Sertifikasi/sertifikat_course_68_463492_171020113854.page1.png" class="certificate__img">
+            <img src="assets/Sertifikasi/sertifikat_course_68_463492_171020113854.page1.png" alt="" />
+          </a>
+          <a href="assets/Sertifikasi/sertifikat_course_86_463492_171020180309.page1.png" class="certificate__img">
+            <img src="assets/Sertifikasi/sertifikat_course_86_463492_171020180309.page1.png" alt="" />
+          </a>
+          <a href="assets/Sertifikasi/sertifikat_course_169_463492_111020115507.page1.png" class="certificate__img">
+            <img src="assets/Sertifikasi/sertifikat_course_169_463492_111020115507.page1.png" alt="" />
+          </a>
+          <a href="assets/Sertifikasi/sertifikat_course_177_463492_131020110558_001.png" class="certificate__img">
+            <img src="assets/Sertifikasi/sertifikat_course_177_463492_131020110558_001.png" alt="" />
+          </a>
+          <a href="assets/Sertifikasi/sertifikat_course_237_463492_210221121744_001.png" class="certificate__img">
+            <img src="assets/Sertifikasi/sertifikat_course_237_463492_210221121744_001.png" alt="" />
+          </a>
+          <a href="assets/Sertifikasi/sertifikat_course_292_463492_210221121934_001.png" class="certificate__img">
+            <img src="assets/Sertifikasi/sertifikat_course_292_463492_210221121934_001.png" alt="" />
+          </a> -->
+
+      </div>
+    </section>
+
+    <!--=============== PORTFOLIO ===============-->
+    <section class="work section" id="portfolio">
+      <span class="section__subtitle">My Portfolio</span>
+      <h3 class="section__title">Projects</h3>
+      <div class="work__filters">
+        <span class="work__items active-work" data-filter="all">All</span>
+        <span class="work__items" data-filter=".web">Web</span>
+        <span class="work__items" data-filter=".mobile">Mobile</span>
+      </div>
+      <div class="work__container container grid">
+        <div class="work__card mix web">
+          <a href="assets/img/bpe.PNG" class="certificate__img">
+            <img src="assets/img/bpe.PNG" alt="" class="work__img"
+              style="object-fit: cover; height: 130px; width: 100%;" />
+          </a>
+          <h3 class="work__title">Aplikasi Cost Control Management Project</h3>
+          <a href="https://github.com/hmzhzhm/Cost-Control-Management-Project.git" target="_blank" class="work__button">
+            <i class="bx bxl-github work__icon"></i><i class="bx bx-right-arrow-alt work__icon"></i> </a>
+        </div>
+        <div class="work__card mix mobile">
+          <a href="assets/img/android-jurnal.PNG" class="certificate__img">
+            <img src="assets/img/android-jurnal.PNG" alt="" class="work__img"
+              style="object-fit: cover; height: 130px; width: 100%;" />
+          </a>
+          <h3 class="work__title">Aplikasi Android Travel Jurnal</h3>
+          <a href="https://github.com/hmzhzhm/Travel-journal-Android.git" target="_blank" class="work__button"> <i
+              class="bx bxl-github work__icon"></i><i class="bx bx-right-arrow-alt work__icon"></i> </a>
+        </div>
+        <div class="work__card mix web">
+          <a href="assets/img/aspirasi.PNG" class="certificate__img">
+            <img src="assets/img/aspirasi.PNG" alt="" class="work__img"
+              style="object-fit: cover; height: 130px; width: 100%;" />
+          </a>
+          <h3 class="work__title">Aplikasi Kotak Aspirasi Mahasiswa</h3>
+          <a href="https://github.com/hmzhzhm/Kotak-Aspirasi.git" target="_blank" class="work__button"> <i
+              class="bx bxl-github work__icon"></i><i class="bx bx-right-arrow-alt work__icon"></i> </a>
+        </div>
+        <div class="work__card mix web">
+          <a href="assets/img/bojongnangka.PNG" class="certificate__img">
+            <img src="assets/img/bojongnangka.PNG" alt="" class="work__img"
+              style="object-fit: cover; height: 130px; width: 100%;" />
+          </a>
+          <h3 class="work__title">Aplikasi Pengaduan Masyarakat</h3>
+          <a href="https://github.com/hmzhzhm/Pengaduan-Masyarakat.git" class="work__button"> <i
+              class="bx bxl-github work__icon"></i><i class="bx bx-right-arrow-alt work__icon"></i> </a>
+        </div>
+        <div class="work__card mix web">
+          <a href="assets/img/Pencatatan-Keuangan.PNG" class="certificate__img">
+            <img src="assets/img/Pencatatan-Keuangan.PNG" alt="" class="work__img"
+              style="object-fit: cover; height: 130px; width: 100%;" />
+          </a>
+          <h3 class="work__title">Aplikasi Pencatatan Keuangan</h3>
+          <a href="https://github.com/hmzhzhm/Keuangan.git" class="work__button"> <i
+              class="bx bxl-github work__icon"></i><i class="bx bx-right-arrow-alt work__icon"></i> </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!--=============== CONTACT ===============-->
+    <section class="contact section" id="contact">
+      <span class="section__subtitle">Get in touch</span>
+      <h3 class="section__title">Contact Me</h3>
+
+      <div class="contact__container container grid">
+        <!-- <div class="contact__content">
+            <h3 class="contact__title">Talk to me</h3>
+            <div class="contact__info">
+              <div class="contact__card">
+                <i class="bx bx-mail-send contact__card-icon"></i>
+                <h3 class="contact__card-title">Email</h3>
+                <span class="contact__card-data">alfarabyindra@gmail.com</span>
+                <a href="mailto:examplemail@correo.com" target="_blank" class="contact__button">
+                  Write me
+                  <i class="bx bx-right-arrow-alt contact__button-icon"></i>
+                </a>
+              </div>
+              <div class="contact__card">
+                <i class="bx bxl-whatsapp contact__card-icon"></i>
+                <h3 class="contact__card-title">Whatsapp</h3>
+                <span class="contact__card-data">085363939486</span>
+                <a href="https://wa.me/6285363939486" target="_blank" class="contact__button">
+                  Write me
+                  <i class="bx bx-right-arrow-alt contact__button-icon"></i>
+                </a>
+              </div>
+              <div class="contact__card">
+                <i class="bx bxl-instagram contact__card-icon"></i>
+                <h3 class="contact__card-title">Instagram</h3>
+                <span class="contact__card-data">alfarabyindra</span>
+                <a href="https://instagram.com/alfarabyindra?igshid=NGExMml2YTkyZg==" target="_blank" class="contact__button">
+                  Write me
+                  <i class="bx bx-right-arrow-alt contact__button-icon"></i>
+                </a>
+              </div>
+            </div>
+          </div> -->
+        <div class="contact__content">
+          <h3 class="contact__title">Send me a message via email!</h3>
+          <form action="send_email.php" method="POST" class="contact__form" id="contact-form">
+            <div class="contact__form-div">
+              <label for="" class="contact__form-tag">Name</label>
+              <input type="text" name="user_name" placeholder="Input Name" class="contact__form-input"
+                id="contact-name" />
+            </div>
+            <div class="contact__form-div">
+              <label for="" class="contact__form-tag">Email</label>
+              <input type="text" name="user_email" placeholder="Enter Email" class="contact__form-input"
+                id="contact-email" />
+            </div>
+            <div class="contact__form-div">
+              <label for="" class="contact__form-tag">Subject</label>
+              <input type="text" name="user_subject" placeholder="Enter Subject" class="contact__form-input"
+                id="contact-subject" />
+            </div>
+            <div class="contact__form-div contact__form-area">
+              <label for="" class="contact__form-tag">Message</label>
+              <textarea cols="30" rows="10" name="user_project" placeholder="Enter Message" class="contact__form-input"
+                id="contact-project"></textarea>
+            </div>
+            <p class="contact__message" id="contact-message"></p>
+            <button class="button" id="send-button">Send</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!--=============== FOOTER ===============-->
+  <footer class="footer">
+    <div class="footer__container container">
+      <h1 class="footer__title">Hamzah Alfariansyah</h1>
+      <ul class="footer__list">
+        <li><a href="#about" class="footer__link">About</a></li>
+        <li><a href="#portfolio" class="footer__link">Projects</a></li>
+        <!-- <li><a href="#testimonial" class="footer__link">Testimonials</a></li> -->
+      </ul>
+
+      <ul class="footer__social">
+        <a href="https://www.linkedin.com/in/Hamzah-Alfariansyah" target="_blank" class="footer__social-link"><i
+            class="bx bxl-linkedin"></i></a>
+        <a href="https://github.com/hmzhzhm" target="_blank" class="footer__social-link"><i
+            class="bx bxl-github"></i></a>
+        <a href="mailto:alfariansyah22@gmail.com" target="_blank" class="footer__social-link"><i
+            class="bx bx-envelope"></i></a>
+      </ul>
+      <span class="footer__copy"> &#169; 2024. All rights reserved. </span>
+    </div>
+  </footer>
+  <!--=============== SCROLLREVEAL ===============-->
+  <script src="assets/js/scrollreveal.min.js"></script>
+  <!--=============== MIXITUP FILTER ===============-->
+  <script src="assets/js/mixitup.min.js"></script>
+  <!--=============== MAIN JS ===============-->
+  <script src="assets/js/main.js"></script>
+  <div class="notification" id="notification"></div>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      var sendButton = document.getElementById('send-button');
+      sendButton.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Sending...';
+      sendButton.disabled = true;
+
+      var formData = new FormData(this);
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'send_email.php', true);
+      xhr.onload = function () {
+        var response = JSON.parse(this.responseText);
+        var notification = document.getElementById('notification');
+        notification.textContent = response.message;
+        notification.className = 'notification ' + (response.status === 'success' ? '' : 'error');
+        notification.style.display = 'block';
+
+        // Reset button immediately after response
+        sendButton.innerHTML = 'Send';
+        sendButton.disabled = false;
+
+        setTimeout(function () {
+          notification.style.display = 'none';
+        }, 5000);
+      };
+      xhr.send(formData);
+    });
+  </script>
+</body>
+
+</html>
