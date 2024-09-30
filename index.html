@@ -430,10 +430,10 @@
           </div> -->
         <div class="contact__content">
           <h3 class="contact__title">Send me a message via email!</h3>
-          <form action="send_email.php" method="POST" class="contact__form" id="contact-form">
+          <form action="https://formspree.io/f/mrbznoqq" method="POST" class="contact__form" id="contact-form">
             <div class="contact__form-div">
               <label for="" class="contact__form-tag">Name</label>
-              <input type="text" name="user_name" placeholder="Input Name" class="contact__form-input"
+              <input type="text" name="user_name" placeholder="Enter Name" class="contact__form-input"
                 id="contact-name" />
             </div>
             <div class="contact__form-div">
@@ -443,7 +443,7 @@
             </div>
             <div class="contact__form-div">
               <label for="" class="contact__form-tag">Subject</label>
-              <input type="text" name="user_subject" placeholder="Enter Subject" class="contact__form-input"
+              <input type="text" name="subject" placeholder="Enter Subject" class="contact__form-input"
                 id="contact-subject" />
             </div>
             <div class="contact__form-div contact__form-area">
@@ -452,7 +452,7 @@
                 id="contact-project"></textarea>
             </div>
             <p class="contact__message" id="contact-message"></p>
-            <button class="button" id="send-button">Send</button>
+            <button type="submit" class="button" id="send-button">Send</button>
           </form>
         </div>
       </div>
@@ -488,33 +488,67 @@
   <div class="notification" id="notification"></div>
 
   <script>
-    document.getElementById('contact-form').addEventListener('submit', function (event) {
-      event.preventDefault();
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+  event.preventDefault();
 
-      var sendButton = document.getElementById('send-button');
-      sendButton.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Sending...';
-      sendButton.disabled = true;
+  var sendButton = document.getElementById('send-button');
+  var nameInput = document.getElementById('contact-name');
+  var emailInput = document.getElementById('contact-email');
+  var subjectInput = document.getElementById('contact-subject');
+  var messageInput = document.getElementById('contact-project');
+  var notification = document.getElementById('notification');
 
-      var formData = new FormData(this);
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST', 'send_email.php', true);
-      xhr.onload = function () {
-        var response = JSON.parse(this.responseText);
-        var notification = document.getElementById('notification');
-        notification.textContent = response.message;
-        notification.className = 'notification ' + (response.status === 'success' ? '' : 'error');
-        notification.style.display = 'block';
+  // Validasi input
+  if (!nameInput.value || !emailInput.value || !subjectInput.value || !messageInput.value) {
+    notification.textContent = 'Semua field harus diisi!';
+    notification.className = 'notification error';
+    notification.style.display = 'block';
+    setTimeout(() => { notification.style.display = 'none'; }, 5000);
+    return;
+  }
 
-        // Reset button immediately after response
-        sendButton.innerHTML = 'Send';
-        sendButton.disabled = false;
+  sendButton.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Mengirim...';
+  sendButton.disabled = true;
 
-        setTimeout(function () {
-          notification.style.display = 'none';
-        }, 5000);
-      };
-      xhr.send(formData);
-    });
+  var formData = new FormData(this);
+  
+  // Tambahkan nama pengguna ke formData sebagai _subject
+  formData.append("_subject", "Pesan dari " + nameInput.value);
+
+  // Ganti label untuk setiap field
+  formData.set("Nama Pengirim", formData.get("user_name"));
+  formData.set("Email Pengirim", formData.get("user_email"));
+  formData.set("Pesan Pengirim", formData.get("user_project"));
+
+  // Hapus field lama
+  formData.delete("user_name");
+  formData.delete("user_email");
+  formData.delete("user_project");
+
+  fetch(this.action, {
+    method: 'POST',
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(response => response.json())
+  .then(data => {
+    notification.textContent = 'Berhasil mengirim email!';
+    notification.className = 'notification';
+    notification.style.display = 'block';
+    sendButton.innerHTML = 'Kirim';
+    sendButton.disabled = false;
+    this.reset();
+    setTimeout(() => { notification.style.display = 'none'; }, 5000);
+  }).catch(error => {
+    notification.textContent = 'Gagal mengirim email. Silakan coba lagi.';
+    notification.className = 'notification error';
+    notification.style.display = 'block';
+    sendButton.innerHTML = 'Kirim';
+    sendButton.disabled = false;
+    setTimeout(() => { notification.style.display = 'none'; }, 5000);
+  });
+});
   </script>
 </body>
 
