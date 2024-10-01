@@ -341,6 +341,15 @@
         <span class="work__items" data-filter=".mobile">Mobile</span>
       </div>
       <div class="work__container container grid">
+        <div class="work__card mix mobile">
+          <a href="assets/img/android-jurnal.PNG" class="certificate__img">
+            <img src="assets/img/android-jurnal.PNG" alt="" class="work__img"
+              style="object-fit: cover; height: 130px; width: 100%;" />
+          </a>
+          <h3 class="work__title">Aplikasi Android Travel Journal</h3>
+          <a href="https://github.com/hmzhzhm/Travel-journal-Android.git" target="_blank" class="work__button"> <i
+              class="bx bxl-github work__icon"></i><i class="bx bx-right-arrow-alt work__icon"></i> </a>
+        </div>
         <div class="work__card mix web">
           <a href="assets/img/bpe.PNG" class="certificate__img">
             <img src="assets/img/bpe.PNG" alt="" class="work__img"
@@ -350,15 +359,7 @@
           <a href="https://github.com/hmzhzhm/Cost-Control-Management-Project.git" target="_blank" class="work__button">
             <i class="bx bxl-github work__icon"></i><i class="bx bx-right-arrow-alt work__icon"></i> </a>
         </div>
-        <div class="work__card mix mobile">
-          <a href="assets/img/android-jurnal.PNG" class="certificate__img">
-            <img src="assets/img/android-jurnal.PNG" alt="" class="work__img"
-              style="object-fit: cover; height: 130px; width: 100%;" />
-          </a>
-          <h3 class="work__title">Aplikasi Android Travel Jurnal</h3>
-          <a href="https://github.com/hmzhzhm/Travel-journal-Android.git" target="_blank" class="work__button"> <i
-              class="bx bxl-github work__icon"></i><i class="bx bx-right-arrow-alt work__icon"></i> </a>
-        </div>
+        
         <div class="work__card mix web">
           <a href="assets/img/aspirasi.PNG" class="certificate__img">
             <img src="assets/img/aspirasi.PNG" alt="" class="work__img"
@@ -390,12 +391,45 @@
       </div>
     </section>
 
+
     <!--=============== CONTACT ===============-->
     <section class="contact section" id="contact">
       <span class="section__subtitle">Get in touch</span>
-      <h3 class="section__title">Contact Me</h3>
+      <h3 class="section__title">Let's Work Together!</h3>
 
       <div class="contact__container container grid">
+        <div class="contact__content">
+          <h3 class="contact__title">Contact Me</h3>
+          <div class="contact__info">
+            <div class="contact__card">
+              <i class="bx bxl-linkedin contact__card-icon"></i>
+              <h3 class="contact__card-title">LinkedIn</h3>
+              <span class="contact__card-data">linkedin.com/in/Hamzah-Alfariansyah</span>
+              <a href="https://www.linkedin.com/in/Hamzah-Alfariansyah" target="_blank" class="contact__button">
+                Connect
+                <i class="bx bx-right-arrow-alt contact__button-icon"></i>
+              </a>
+            </div>
+            <div class="contact__card">
+              <i class="bx bxl-github contact__card-icon"></i>
+              <h3 class="contact__card-title">GitHub</h3>
+              <span class="contact__card-data">github.com/hmzhzhm</span>
+              <a href="https://github.com/hmzhzhm" target="_blank" class="contact__button">
+                Follow
+                <i class="bx bx-right-arrow-alt contact__button-icon"></i>
+              </a>
+            </div>
+            <div class="contact__card">
+              <i class="bx bx-mail-send contact__card-icon"></i>
+              <h3 class="contact__card-title">Email</h3>
+              <span class="contact__card-data">alfariansyah22@gmail.com</span>
+              <a href="mailto:alfariansyah22@gmail.com" target="_blank" class="contact__button">
+                Write me
+                <i class="bx bx-right-arrow-alt contact__button-icon"></i>
+              </a>
+            </div>
+          </div>
+        </div>
         <!-- <div class="contact__content">
             <h3 class="contact__title">Talk to me</h3>
             <div class="contact__info">
@@ -429,7 +463,7 @@
             </div>
           </div> -->
         <div class="contact__content">
-          <h3 class="contact__title">Send me a message via email!</h3>
+          <h3 class="contact__title">Send me a message via email</h3>
           <form action="https://formspree.io/f/mrbznoqq" method="POST" class="contact__form" id="contact-form">
             <div class="contact__form-div">
               <label for="" class="contact__form-tag">Name</label>
@@ -536,7 +570,7 @@
     notification.textContent = 'Berhasil mengirim email!';
     notification.className = 'notification';
     notification.style.display = 'block';
-    sendButton.innerHTML = 'Kirim';
+    sendButton.innerHTML = 'Send';
     sendButton.disabled = false;
     this.reset();
     setTimeout(() => { notification.style.display = 'none'; }, 5000);
@@ -544,7 +578,7 @@
     notification.textContent = 'Gagal mengirim email. Silakan coba lagi.';
     notification.className = 'notification error';
     notification.style.display = 'block';
-    sendButton.innerHTML = 'Kirim';
+    sendButton.innerHTML = 'Send';
     sendButton.disabled = false;
     setTimeout(() => { notification.style.display = 'none'; }, 5000);
   });
